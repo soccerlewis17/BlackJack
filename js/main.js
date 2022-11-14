@@ -26,24 +26,21 @@ const masterDeck = buildMasterDeck();
 
 /*----- app's state (variables) -----*/
 let shuffledDeck;
-
-
-let scores = {
-}
+let scores;
 let winner;
+let cardTotals;
 
 /*----- cached element references -----*/
 
-const shuffledContainer = document.getElementById('shuffled-deck-container');
-
 let dealerScoreEl = document.querySelector('#dealerScore');
 let playerScoreEl = document.querySelector('#playerScore');
+let dealerCardsEl = document.querySelector('.dealerCards');
+let playerCardsEl = document.querySelector('.playerCards');
 
 
 
 /*----- event listeners -----*/
-document.querySelector('button').addEventListener('click', renderNewShuffledDeck);
-
+document.querySelector('#dealBtn').addEventListener('click', getShuffledDeck);
 
 
 /*----- functions -----*/
@@ -58,7 +55,14 @@ function init() {
 }
 
 function winnerMessage() {
-
+    if (scores.player > scores.dealer) {
+        console.log('Congratulations, you won! I bet you cannot do it again though...')
+    } else if (scores.player === scores.dealer) {
+        console.log('Push')
+    } else {
+        console.log('Dealer wins. Sorry about your luck.')
+    }
+    render();
 }
 
 function deal() {
@@ -73,48 +77,19 @@ function stand() {
 }
 
 function render() {
+    dealerScoreEl.innerHTML = scores.dealer;
+    playerScoreEl.innerHTML = scores.player;
 
 }
 
-function getNewShuffledDeck() {
-    // Create a copy of the masterDeck (leave masterDeck untouched!)
-    const tempDeck = [...masterDeck];
-    const newShuffledDeck = [];
-    while (tempDeck.length) {
-      // Get a random index for a card still in the tempDeck
-      const rndIdx = Math.floor(Math.random() * tempDeck.length);
-      // Note the [0] after splice - this is because splice always returns an array and we just want the card object in that array
-      newShuffledDeck.push(tempDeck.splice(rndIdx, 1)[0]);
-    }
-    return newShuffledDeck;
-  }
-  
-  function renderNewShuffledDeck() {
-    // Create a copy of the masterDeck (leave masterDeck untouched!)
-    shuffledDeck = getNewShuffledDeck();
-    renderDeckInContainer(shuffledDeck, shuffledContainer);
-  }
-  
-  function renderDeckInContainer(deck, container) {
-    container.innerHTML = '';
-    // Let's build the cards as a string of HTML
-    let cardsHtml = '';
-    deck.forEach(function(card) {
-      cardsHtml += `<div class="card ${card.face}"></div>`;
-    });
 
-    container.innerHTML = cardsHtml;
-}
 
 function buildMasterDeck() {
   const deck = [];
-  // Use nested forEach to generate card objects
   suits.forEach(function(suit) {
     ranks.forEach(function(rank) {
       deck.push({
-        // The 'face' property maps to the library's CSS classes for cards
         face: `${suit}${rank}`,
-        // Setting the 'value' property for game of blackjack, not war
         value: Number(rank) || (rank === 'A' ? 11 : 10)
       });
     });
@@ -122,4 +97,22 @@ function buildMasterDeck() {
   return deck;
 }
 
-renderNewShuffledDeck();
+function getShuffledDeck() {
+    const tempDeck = [...masterDeck];
+    const shuffledDeck = [];
+    while (tempDeck.length) {
+      const rndIdx = Math.floor(Math.random() * tempDeck.length);
+      shuffledDeck.push(tempDeck.splice(rndIdx, 1)[0]);
+    }
+    return shuffledDeck;
+  }
+
+
+  function dealPlayer() {    
+    cardOne = shuffledDeck[0];
+    cardTwo = shuffledDeck[1];
+    
+
+  playerCardsEl.innerHTML += `<div class="card ${card.face}"></div>`
+        
+    }

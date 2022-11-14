@@ -10,26 +10,27 @@
 </head>
 <body>
     <h1>Blackjack</h1>
-    <button>Deal</button>
-    <h3 id='dealerScore'>Dealer Score:</h3>
-    <div>
-        <img id="shuffled-deck-container" class="card-container"></img>
-        <!-- see if above references pictures of cards -->
-        <!-- // dealer card 1 -->
-        <img src="" alt=""></img> 
-        <!-- // dealer card 2 -->
+    <button id="dealBtn">Deal</button>
+    <section class="dealerInfo">
+        <h3>Dealer Score:</h3>
+        <h3 id='dealerScore'>0</h3>
+    </section>
+    <div class="dealerCards">
+        <img id='dealerCardOne' src="/css/images/background/blue.svg" alt="no"></img>
+        <img id='dealerCardTwo' src="/css/images/background/blue.svg" alt="no"></img>
     </div>
     <div>
         <button>Hit</button>
         <button>Stand</button>
     </div>
-    <div>
-        <img src="" alt=""></img> 
-        <!-- // player card 1 -->
-        <img src="" alt=""></img> 
-        <!-- // player card 2 -->
+    <div class="playerCards">
+        <img id='playerCardOne' src="/css/images/background/blue.svg" alt="no"></img>
+        <img id='playerCardTwo' src="/css/images/background/blue.svg" alt="no"></img>
     </div>
-    <h3 id='dealerScore'>Player Score:</h3>
+    <section class="playerInfo">
+        <h3>Player Score:</h3>
+        <h3 id='playerScore'>0</h3>
+    </section>
     
 </body>
 </html>
