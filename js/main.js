@@ -13,7 +13,9 @@ let scores = {
     dealer: 0
 };
 let winner;
-let cardTotals;
+let playerCardOne = [];
+let playerCardTwo = [];
+let dealerCardOne = [];
 
 /*----- cached element references -----*/
 
@@ -37,30 +39,33 @@ document.querySelector('#standBtn').addEventListener('click', dealerHit);
 
 
 /*----- functions -----*/
-init()
 
 function init() {
     
+    dealerScoreEl.innerText = scores.dealer;
+    playerScoreEl.innerText = scores.player;
+
     scores.player = 0;
     scores.dealer = 0;
-
+    playerCardsEl.remove();
+    dealerCardsEl.remove();
     // playerCardThreeEl.setAttribute('class', '');
     // playerCardsEl.removeChildren();
     // playerCardsEl.children.remove();
-
     render();
+
 }
 
 // trying to add reset function to separate from the deal button
+playRound();
 function playRound() {
     getShuffledDeck();
     dealPlayer();
     dealDealer();
-    
-    // playerCardsEl = [];
-
     render();
 }
+
+
 
 function winnerMessage() {
     if (scores.player > 21) {
@@ -124,6 +129,10 @@ function render() {
     dealerScoreEl.innerText = scores.dealer;
     playerScoreEl.innerText = scores.player;
 
+// playerCardThreeEl.setAttribute('class', '');
+    // playerCardsEl.removeChildren();
+    // playerCardsEl.remove();
+    // playerCardThree.remove();
 }
 
 
