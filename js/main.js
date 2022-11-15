@@ -156,6 +156,10 @@ function dealPlayer() {
 
     playerCardOneEl.setAttribute('class', `card ${playerCardOne.face}`);
     playerCardTwoEl.setAttribute('class', `card ${playerCardTwo.face}`);
+
+    if (scores.player === 21) {
+        winnerMessage();
+    }
         
     render();
     }
