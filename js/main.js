@@ -21,11 +21,11 @@ let dealerScoreEl = document.querySelector('#dealerScore');
 let playerScoreEl = document.querySelector('#playerScore');
 
 let dealerCardOneEl = document.querySelector('#dealerCardOne');
-let dealerCardTwoEl = document.querySelector('#dealerCardTwo');
 let playerCardOneEl = document.querySelector('#playerCardOne');
 let playerCardTwoEl = document.querySelector('#playerCardTwo');
 
 let playerCardsEl = document.querySelector('.playerCards');
+let dealerCardsEl = document.querySelector('.dealerCards');
 
 
 
@@ -94,8 +94,15 @@ function dealerHit() {
     } else if (scores.dealer > 16) {
         winnerMessage();
     } else { 
-        scores.dealer += shuffledDeck.pop().value;
+        let newDealerCard = shuffledDeck.pop()
+        scores.dealer += newDealerCard.value;
         
+        let dealerCardTwoEl = document.createElement('div');
+        dealerCardTwoEl.setAttribute('class', `card ${newDealerCard.face}`);
+        dealerCardsEl.appendChild(dealerCardTwoEl);
+
+
+
         if (scores.dealer > 21) {
             winnerMessage();
         } else if (scores.dealer === 21) {
@@ -158,7 +165,6 @@ function dealDealer() {
     scores.dealer = dealerCardOne.value;
     
     dealerCardOneEl.setAttribute('class', `card ${dealerCardOne.face}`);
-    dealerCardTwoEl.setAttribute('src', 'images/background/blue.svg');
         
     render();
 
