@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script defer src="js/main.js"></script>
-    <link src="/css/styles.css"></link>
+    <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
     <h1>Blackjack</h1>
@@ -16,16 +16,16 @@
         <h3 id='dealerScore'>0</h3>
     </section>
     <div class="dealerCards">
-        <img id='dealerCardOne' src="/css/images/background/blue.svg" alt="no"></img>
-        <img id='dealerCardTwo' src="/css/images/background/blue.svg" alt="no"></img>
+        <img id='dealerCardOne' src="/css/images/background/blue.svg"></img>
+        <img id='dealerCardTwo' src="/css/images/background/blue.svg"></img>
     </div>
     <div>
-        <button>Hit</button>
-        <button>Stand</button>
+        <button id="hitBtn">Hit</button>
+        <button id="standBtn">Stand</button>
     </div>
-    <div class="playerCards">
-        <img id='playerCardOne' src="/css/images/background/blue.svg" alt="no"></img>
-        <img id='playerCardTwo' src="/css/images/background/blue.svg" alt="no"></img>
+    <div> 
+        <div id='playerCardOne'></div>
+        <div id='playerCardTwo'></div>
     </div>
     <section class="playerInfo">
         <h3>Player Score:</h3>

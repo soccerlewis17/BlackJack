@@ -1,5 +1,3 @@
-// I'd like to do a blackjack game. I'd start with a 'deal' button and a total amount to bet from an available balance.
-// Then, to play the game, I'd show two cards for the player and one card for the dealer. I would give the player the option to hit or stand, totaling the sum of the cards after each 
 // hit until the player either stands or busts. I would give the dealer a hit limit of 17, to even out the odds for the player.
 // My logic would be something like:
 // If player sum = 21, player wins (if in 2 cards)
@@ -21,12 +19,14 @@ const suits = ['s', 'c', 'd', 'h'];
 const ranks = ['02', '03', '04', '05', '06', '07', '08', '09', '10', 'J', 'Q', 'K', 'A'];
 
 const masterDeck = buildMasterDeck();
-// renderDeckInContainer(masterDeck, document.getElementById('master-deck-container'));
 
 
 /*----- app's state (variables) -----*/
-let shuffledDeck;
-let scores;
+let shuffledDeck = getShuffledDeck();
+let scores = {
+    player: 0,
+    dealer: 0
+};
 let winner;
 let cardTotals;
 
@@ -34,13 +34,20 @@ let cardTotals;
 
 let dealerScoreEl = document.querySelector('#dealerScore');
 let playerScoreEl = document.querySelector('#playerScore');
-let dealerCardsEl = document.querySelector('.dealerCards');
-let playerCardsEl = document.querySelector('.playerCards');
+
+let dealerCardOneEl = document.querySelector('#dealerCardOne');
+let playerCardOneEl = document.querySelector('#playerCardOne');
 
 
 
 /*----- event listeners -----*/
 document.querySelector('#dealBtn').addEventListener('click', getShuffledDeck);
+document.querySelector('#dealBtn').addEventListener('click', dealPlayer);
+
+document.querySelector('#dealBtn').addEventListener('click', dealDealer); // maybe after stand button show the score?
+
+document.querySelector('#hitBtn').addEventListener('click', playerHit);
+document.querySelector('#standBtn').addEventListener('click', dealerHit);
 
 
 /*----- functions -----*/
@@ -55,7 +62,10 @@ function init() {
 }
 
 function winnerMessage() {
-    if (scores.player > scores.dealer) {
+    if (scores.player > 21) {
+        console.log('Bust!')
+    }
+    else if (scores.player > scores.dealer || scores.dealer > 21) {
         console.log('Congratulations, you won! I bet you cannot do it again though...')
     } else if (scores.player === scores.dealer) {
         console.log('Push')
@@ -65,20 +75,42 @@ function winnerMessage() {
     render();
 }
 
-function deal() {
-
-}
-
-function hit() {
+function playerHit() {    
+    scores.player += shuffledDeck.pop().value
     
-}
+    if (scores.player > 21) {
+            return winnerMessage();
+        } else if (scores.player === 21) {
+            return dealerHit();
+        } else {}
+    render();
+    }
 
-function stand() {
+function dealerHit() {
+    if (scores.dealer === 21) {
+        winnerMessage();
+    } else if (scores.dealer > 16) {
+        winnerMessage();
+    } else { 
+        scores.dealer += shuffledDeck.pop().value;
+        
+        if (scores.dealer > 21) {
+            winnerMessage();
+        } else if (scores.dealer === 21) {
+            winnerMessage();
+        } else if (scores.dealer < 17) {
+            dealerHit()
+        } else {
+            winnerMessage();
+        }
+    } render();
 }
 
 function render() {
-    dealerScoreEl.innerHTML = scores.dealer;
-    playerScoreEl.innerHTML = scores.player;
+    dealerScoreEl.innerText = scores.dealer;
+    playerScoreEl.innerText = scores.player;
+
+    // playerCardOneEl.
 
 }
 
@@ -100,19 +132,37 @@ function buildMasterDeck() {
 function getShuffledDeck() {
     const tempDeck = [...masterDeck];
     const shuffledDeck = [];
-    while (tempDeck.length) {
-      const rndIdx = Math.floor(Math.random() * tempDeck.length);
-      shuffledDeck.push(tempDeck.splice(rndIdx, 1)[0]);
-    }
+        while (tempDeck.length) {
+         const rndIdx = Math.floor(Math.random() * tempDeck.length);
+        shuffledDeck.push(tempDeck.splice(rndIdx, 1)[0]);
+     }
     return shuffledDeck;
-  }
+    }
 
 
-  function dealPlayer() {    
-    cardOne = shuffledDeck[0];
-    cardTwo = shuffledDeck[1];
-    
+function dealPlayer() {    
+    cardOne = shuffledDeck.pop();
+    cardTwo = shuffledDeck.pop();
+    // console.log(cardOne);
+    // console.log(cardTwo);
 
-  playerCardsEl.innerHTML += `<div class="card ${card.face}"></div>`
+    scores.player = cardOne.value + cardTwo.value;
+
+
+    playerCardOneEl.setAttribute('class', `card ${cardOne.face}`);
         
+    render();
+    }
+
+function dealDealer() {    
+    cardOne = shuffledDeck.pop();  
+    scores.dealer = cardOne.value;
+    
+    dealerCardOneEl.setAttribute('class', `card ${cardOne.face}`);
+        
+    render();
+
+    // dealerCardOneEl.innerHTML +=
+    // playerCardOneEl.innerHTML += `<div class="card ${cardOne.face}"></div>`
+            
     }
