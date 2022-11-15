@@ -30,25 +30,34 @@ let dealerCardsEl = document.querySelector('.dealerCards');
 
 
 /*----- event listeners -----*/
-document.querySelector('#dealBtn').addEventListener('click', init);
-
-document.querySelector('#dealBtn').addEventListener('click', dealDealer); // maybe after stand button show the score?
-
+document.querySelector('#dealBtn').addEventListener('click', playRound);
+document.querySelector('#resetBtn').addEventListener('click', init);
 document.querySelector('#hitBtn').addEventListener('click', playerHit);
 document.querySelector('#standBtn').addEventListener('click', dealerHit);
 
 
 /*----- functions -----*/
+init()
 
 function init() {
     
     scores.player = 0;
     scores.dealer = 0;
 
+    // playerCardThreeEl.setAttribute('class', '');
+    // playerCardsEl.removeChildren();
+    // playerCardsEl.children.remove();
+
+    render();
+}
+
+// trying to add reset function to separate from the deal button
+function playRound() {
     getShuffledDeck();
     dealPlayer();
     dealDealer();
-
+    
+    // playerCardsEl = [];
 
     render();
 }
@@ -75,10 +84,6 @@ function playerHit() {
     let playerCardThreeEl = document.createElement('div');
     playerCardThreeEl.setAttribute('class', `card ${newPlayerCard.face}`);
     playerCardsEl.appendChild(playerCardThreeEl);
-
-// create div?
-// set attribute to class stuff
-// append child
     
     if (scores.player > 21) {
             return winnerMessage();
@@ -118,8 +123,6 @@ function dealerHit() {
 function render() {
     dealerScoreEl.innerText = scores.dealer;
     playerScoreEl.innerText = scores.player;
-
-    // playerCardOneEl.
 
 }
 
