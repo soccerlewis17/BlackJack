@@ -9,24 +9,29 @@
     <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
-    <h1>Blackjack</h1>
-    <p class="message">Do you have what it takes?</p>
-    <button id="dealBtn">Deal</button>
-    <button id="resetBtn">Reset</button>
-    <section class="dealerInfo">
-        <h3>Dealer Score:</h3>
-        <h3 id='dealerScore'>0</h3>
-    </section>
-    <div class="dealerCards"></div>
-    <div>
-        <button id="hitBtn">Hit</button>
-        <button id="standBtn">Stand</button>
+    <h1>~ Simpleman's Blackjack ~</h1>
+    <h2 class="message">Do you have what it takes?</h2>
+    <div class="dealButtons">
+        <button id="dealBtn">Deal</button>
+        <button id="resetBtn">Reset</button>
     </div>
-    <div class="playerCards"></div>
-    <section class="playerInfo">
-        <h3>Player Score:</h3>
+    <div class="dealerStuff">
+        <div class="dealerCards"></div>
+        <section class="dealerInfo">
+        <h3 id="dealerScoreScript">Dealer Score: </h3>
+        <h3 id='dealerScore'>0</h3>
+        </section>
+    </div> 
+        <div class="playerButtons">
+            <button id="hitBtn">Hit</button>
+            <button id="standBtn">Stand</button>
+        </div>
+    <div class="playerStuff">  
+        <div class="playerCards"></div>
+        <section class="playerInfo">
+        <h3 id="playerScoreScript">Player Score: </h3>
         <h3 id="playerScore">0</h3>
-    </section>
-    
+        </section>
+    </div>  
 </body>
 </html>

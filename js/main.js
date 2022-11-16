@@ -55,17 +55,13 @@ function playRound() {
 
 function winnerMessage() {
     if (scores.player > 21) {
-        console.log("Bust!")
         messageEl.innerText = "Bust!"
     }
     else if (scores.player > scores.dealer || scores.dealer > 21) {
-        console.log('Congratulations, you won! I bet you cannot do it again though...')
-        messageEl.innerText = "Congratulations, you won! I bet you cannot do it again though..."
+        messageEl.innerText = "Congratulations, you won! I bet you can't do it again though..."
     } else if (scores.player === scores.dealer) {
-        console.log('Push')
         messageEl.innerText = "Push"
     } else {
-        console.log('Dealer wins. Sorry about your luck.')
         messageEl.innerText = "Dealer wins. Sorry about your luck."
     }
     render();

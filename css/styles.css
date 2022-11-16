@@ -1,20 +1,105 @@
 
 
-.test {
-    background-color: orange;
-}
-
 body {
     display: flex;
     flex-direction: column;
-    text-align: center;
+    background-color: #51BF40;
+    color: white;
 }
+
+body > button {
+    width: 70px;
+    text-align: center;
+
+}
+
+h1 {
+    font-family: SignPainter;
+    font-size: 60px;
+    color: #4091BF;
+    display: flex;
+    justify-content: center;
+}
+h2 {
+    display: flex;
+    justify-content: center;
+}
+.dealButtons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+#dealBtn {
+    background-color: #4091BF;
+    color: white;
+    margin: 5px;
+    font-size: 30px;
+    font-family: copperplate;
+}
+#resetBtn {
+    background-color: #BF6E40;
+    color: white;
+    margin: 5px;
+    font-size: 30px;
+    font-family: copperplate;
+}
+
+.playerInfo {
+    display: flex;
+    flex-direction: row;
+    font-family: copperplate;
+    align-items: center;
+}
+
+.dealerInfo {
+    display: flex;
+    flex-direction: row;
+    font-family: copperplate;
+    align-items: center;
+}
+#hitBtn {
+    font-size: 25px;
+    font-family: copperplate;
+}
+#standBtn {
+    font-size: 25px;
+    font-family: copperplate;
+}
+
+#playerScoreScript {
+    color: #AE40BF;
+}
+#dealerScoreScript {
+    color: #AE40BF;
+}
+#playerScore {
+    font-size: 30px;
+}
+#dealerScore {
+    font-size: 30px;
+}
+.playerButtons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.playerStuff {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.dealerStuff {
+    display: flex;
+    flex-direction: column;
+}
+
 
 
 .card {
     box-sizing: border-box;
     display: inline-block;
-    margin: 5px 5px 50px 5px;
+    margin: 5px 5px 5px 5px;
     cursor: pointer;
     /* Set the card's dimensions, and size it relative to
        it's font size. */
