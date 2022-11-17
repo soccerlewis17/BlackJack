@@ -51,7 +51,7 @@ And that's pretty much all there is to this simple version of Blackjack! There a
 
 ☐ ***Next Steps:*** 
 
-In the future, I'd like to tinker with adding the following features.
+In the future, I'd like to tinker with the following features.
   - Ability to bet from a starting balance
   - Double down and split buttons
   - Add more styling to feel like a real table
