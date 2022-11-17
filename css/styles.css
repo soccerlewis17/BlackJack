@@ -19,6 +19,8 @@ h1 {
     color: #4091BF;
     display: flex;
     justify-content: center;
+    -webkit-text-stroke: .5px black;
+    border: solid;
 }
 h2 {
     display: flex;
@@ -60,23 +62,29 @@ h2 {
 #hitBtn {
     font-size: 25px;
     font-family: copperplate;
+    margin: 5px;
 }
 #standBtn {
     font-size: 25px;
     font-family: copperplate;
+    margin: 5px;
 }
 
 #playerScoreScript {
     color: #AE40BF;
+    font-size: 30px;
 }
 #dealerScoreScript {
     color: #AE40BF;
+    font-size: 30px;
 }
 #playerScore {
-    font-size: 30px;
+    font-size: 40px;
+    -webkit-text-stroke: 1px black;
 }
 #dealerScore {
-    font-size: 30px;
+    font-size: 40px;
+    -webkit-text-stroke: 1px black;
 }
 .playerButtons {
     display: flex;

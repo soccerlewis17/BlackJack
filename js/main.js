@@ -3,11 +3,11 @@
 
 const suits = ['s', 'c', 'd', 'h'];
 const ranks = ['02', '03', '04', '05', '06', '07', '08', '09', '10', 'J', 'Q', 'K', 'A'];
-const masterDeck = buildMasterDeck();
+let masterDeck;
 
 /*----- app's state (variables) -----*/
 
-let shuffledDeck = getShuffledDeck();
+let shuffledDeck;
 let scores = {
     player: 0,
     dealer: 0
@@ -20,6 +20,7 @@ let playerScoreEl = document.querySelector("#playerScore");
 let playerCardsEl = document.querySelector(".playerCards");
 let dealerCardsEl = document.querySelector(".dealerCards");
 let messageEl = document.querySelector(".message");
+let playerBtnsEl = document.querySelector(".playerButtons");
 
 /*----- event listeners -----*/
 
@@ -35,7 +36,9 @@ function init() {
     scores.player = 0;
     scores.dealer = 0;  
     messageEl.innerText = "Do you have what it takes?"
-    
+    playerBtnsEl.style.visibility = 'hidden';
+    masterDeck = buildMasterDeck();
+    shuffledDeck = getShuffledDeck(); 
     resetCards();
     render();
 }
@@ -92,6 +95,7 @@ function dealPlayer() {
         winnerMessage();
     }
         
+    playerBtnsEl.style.visibility = 'visible';
     render();
 }
 
