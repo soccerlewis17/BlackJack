@@ -5,7 +5,6 @@ body {
     flex-direction: column;
     background-color: #51BF40;
     color: white;
-    /* margin: 0, 0, 30px, 0; */
 }
 
 body > button {
@@ -102,6 +101,16 @@ h2 {
     flex-direction: column;
     padding-left: 5%;
 }
+
+@media (max-width: 480px) {
+    .dealerstuff {
+        align-items: center;
+        padding-left: 0;
+    }
+    h1 {
+        align-items: center;
+    }
+  }
 
 
 
