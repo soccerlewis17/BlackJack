@@ -5,7 +5,9 @@
 
 ☐ ***Background:*** 
 
-For this project I decided to try my 'hand' at the infamous card game, Blackjack. Debatably started as early as the 16th century, Blackjack has become a staple in casinos and homes across the globe. While also known as 21, the interesting name is thanks to casinos in the 18th century hoping to draw more people with special offers. The most famous offer, of course, was a special bet for the 10:1 odds of a player having a black jack (the jack of spades or clubs) with an ace. While the special betting no longer exists, the name stuck - and with it, the beloved game of Blackjack.
+For this project I decided to try my 'hand' at the infamous card game, Blackjack. Debatably started as early as the 16th century, Blackjack has become a staple in casinos and homes across the globe. While also known as 21, the interesting name is thanks to casinos in the 18th century hoping to draw more people with special offers. The most famous offer, of course, was a special bet for the 10:1 odds of a player having a black jack (the jack of spades or clubs) with an ace. While the special betting no longer exists, the name stuck - and with it, the beloved game of Blackjack. 
+
+Source - (https://www.rainbowcasino.co.uk/blog/history-blackjack#:~:text=The%20Origins,translates%20to%2021%20in%20French.)
 
 
 ☐ ***Technologies Used: Javascript, HTML and CSS.***
