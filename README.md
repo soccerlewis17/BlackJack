@@ -3,20 +3,20 @@
 *Designed in General Assembly Software Engineering Immersive*
 
 
-☐ ***Background: 
+☐ ***Background:*** 
 
 For this project I decided to try my 'hand' at the infamous card game, Blackjack. Debatably started as early as the 16th century, Blackjack has become a staple in casinos and homes across the globe. While also known as 21, the interesting name is thanks to casinos in the 18th century hoping to draw more people with special offers. The most famous offer, of course, was a special bet for the 10:1 odds of a player having a black jack (the jack of spades or clubs) with an ace. While the special betting no longer exists, the name stuck - and with it, the beloved game of Blackjack.
 
 
-☐ ***Technologies Used: Javascript, HTML and CSS.
+☐ ***Technologies Used: Javascript, HTML and CSS.***
 
 
-☐ ***Gameplay: 
+☐ ***Gameplay:*** 
 
 The goal of Blackjack is for the player to get 21, or as close as they can to 21, without going over. The player is trying to end of the game with a higher score than the dealer and vice versa. The catch? The dealer always plays second. The game's appeal is in both its simplicity and its unknown; the player never knows what the dealer is going to be dealt!
 
 
-☐ ***How to play:
+☐ ***How to play:***
 
 <img width="1440" alt="Screenshot 2022-11-17 at 2 57 50 PM" src="https://user-images.githubusercontent.com/116575818/202547233-e416a738-1363-443c-b9ba-4882d9902333.png">
 
@@ -44,10 +44,10 @@ To level the playing field for the player, since the dealer ALWAYS goes second a
 
 And that's pretty much all there is to this simple version of Blackjack! There are other fancy rules, but at its core, all Blackjack games follow this format. I'd try playing this a few times before you hit the casinos with friends. Good luck!!
 
-**Play Simpleman's Blackjack: https://soccerlewis17.github.io/BlackJack/
+**Play Simpleman's Blackjack: https://soccerlewis17.github.io/BlackJack/**
 
 
-☐ ***Next Steps: 
+☐ ***Next Steps:*** 
 
 In the future, I'd like to tinker with adding the following features.
   - Ability to bet from a starting balance
