@@ -102,15 +102,29 @@ h2 {
     padding-left: 5%;
 }
 
-@media (max-width: 480px) {
-    .dealerstuff {
-        align-items: center;
+@media screen and (max-width: 480px) {
+    .dealerStuff {
+        display: flex;
+        flex-direction: column;
         padding-left: 0;
+        align-items: center;
+        padding-top: 5%;
     }
     h1 {
         align-items: center;
+        font-family: SignPainter;
+        font-size: 30px;
+        color: #4091BF;
+        display: flex;
+        justify-content: center;
+        -webkit-text-stroke: .5px black;
+        border: solid;
     }
-  }
+    .dealerInfo {
+        justify-content: center;
+        margin-top: 0;
+    }
+}
 
 
 
