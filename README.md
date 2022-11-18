@@ -12,16 +12,7 @@ Source - (https://www.rainbowcasino.co.uk/blog/history-blackjack#:~:text=The%20O
 
 ☐ ***Technologies Used: Javascript, HTML and CSS.***
 
-
-☐ ***Wireframe:***
-
-Below is the basic outline of what I had envisioned for the game, in order of how you play. I was shooting for a deal button, with a running score and the dealt cards for both the player and dealer. I wanted to start simple and build from there. At the end of the game, I wanted to display a winning message and give the opportunity for the player to play again. In the end, I would enhance this very basic framework into something more appealing, with a few slight changes.
-
-<img width="937" alt="Screenshot 2022-11-10 at 3 10 21 PM" src="https://user-images.githubusercontent.com/116575818/202728568-9e8622e3-7491-4bee-8e21-7d83d2ca7e61.png">
-
-<img width="902" alt="Screenshot 2022-11-10 at 3 13 15 PM" src="https://user-images.githubusercontent.com/116575818/202728595-30cdc19c-0519-476b-a294-bc93c3696669.png">
-
-<img width="806" alt="Screenshot 2022-11-10 at 3 15 15 PM" src="https://user-images.githubusercontent.com/116575818/202728620-d699d383-08e9-4be8-89cc-9916f3b31e41.png">
+☐ ***Setup:***
 
 
 ☐ ***Gameplay:*** 
