@@ -119,12 +119,14 @@ h2 {
         justify-content: center;
         -webkit-text-stroke: .5px black;
         border: solid;
+
+
     }
     .dealerInfo {
         justify-content: center;
         margin-top: 0;
     }
-  }
+}
 
 
 
